@@ -1,7 +1,18 @@
+GET http://localhost:8080/api/usuarios/ HTTP/1.1
+
+
+
+PUT  http://localhost:8080/api/usuarios/627fc22c8050be2ab2ba34c6 HTTP/1.1
+
+
+
 POST  http://localhost:8080/api/usuarios HTTP/1.1
 content-type: application/json
 
 {
-    "nombre": "bilal",
-    "edad": "25"
+    "nombre": "mohamed",
+    "correo":"mohassa@hotmail.com",
+    "password": "Moha90dd",
+    "rol" : "ADMIN_ROLE"
 }
+
