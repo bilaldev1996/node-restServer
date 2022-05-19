@@ -36,7 +36,8 @@ const UsuarioSchema = Schema({
 
 //Sobreescribir el método toJson para eliminar los campos que no queremos que se envien a la BBDD
 UsuarioSchema.methods.toJSON = function(){
-    const {__v,password,...usuario } = this.toObject();
+    const {__v,password,_id,...usuario } = this.toObject();
+    usuario.uid = _id
     return usuario
 }
 
