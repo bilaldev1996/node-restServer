@@ -1,3 +1,4 @@
+const { Categoria, Producto } = require('../models')
 const Role = require('../models/role')
 const Usuario = require('../models/usuario')
 
@@ -22,9 +23,26 @@ const idExiste = async(id = '') => {
     }
 }
 
+const idExisteCategoria = async(id = '') => {
+    const existeCategoria = await Categoria.findById(id)
+    if(!existeCategoria) {
+        throw new Error(`No hay ninguna categoria con este id: ${id} en la BBDD`)
+    }
+}
+
+const idExisteProducto = async(id = '') => {
+    const existeProducto = await Producto.findById(id)
+    if(!existeProducto) {
+        throw new Error(`No hay ninguna categoria con este id: ${id} en la BBDD`)
+    }
+}
+
+
 
 module.exports = {
     esRoleValido,
     emailExiste,
-    idExiste
+    idExiste,
+    idExisteCategoria,
+    idExisteProducto
 }
